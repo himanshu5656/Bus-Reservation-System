@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refer and Earn</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f48282;
+  }
+  
+  .refer-container {
+    text-align: center;
+    background-color: #f7f0f0;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  h1 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+  
+  p {
+    color: #666;
+    margin-bottom: 1.5em;
+  }
+  
+  .refer-box {
+    margin-bottom: 1.5em;
+  }
+  
+  .refer-box input {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .refer-box button {
+    padding: 0.5em 1em;
+    margin-top: 0.5em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .refer-box button:hover {
+    background-color: #45a049;
+  }
+  
+  .social-share p {
+    margin-bottom: 0.5em;
+    color: #333;
+  }
+  
+  .share-btn {
+    padding: 0.5em 1em;
+    margin: 0.2em;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .facebook {
+    background-color: #3b5998;
+  }
+  
+  .facebook:hover {
+    background-color: #324e87;
+  }
+  
+  .twitter {
+    background-color: #1DA1F2;
+  }
+  
+  .twitter:hover {
+    background-color: #1a91da;
+  }
+  
+  .whatsapp {
+    background-color: #25D366;
+  }
+  
+  .whatsapp:hover {
+    background-color: #1ebe58;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="refer-container">
+    <h1>Refer and Earn</h1>
+    <p>Invite your friends and earn rewards!</p>
+    
+    <div class="refer-box">
+      <h2>Your Referral Code</h2>
+      <input type="text" id="referral-code" value="john6754" readonly>
+      <button onclick="copyCode()">Copy Code</button>
+    </div>
+    
+    <div class="social-share">
+      <p>Share with your friends:</p>
+      <button class="share-btn facebook">Share on Facebook</button>
+      <button class="share-btn twitter">Share on Twitter</button>
+      <button class="share-btn whatsapp">Share on WhatsApp</button>
+    </div>
+  </div>
+  <script>
+    function copyCode() {
+      var copyText = document.getElementById("referral-code");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      alert("Referral code copied: " + copyText.value);
+    }
+  </script>
+ 
+</body>
+</html>

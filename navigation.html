@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Preferences - Bus Reservation System</title>
+  <link rel="stylesheet" href="style.css">
+  <style>/* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #88b8e7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    /* Preferences Section */
+    .preferences-section {
+      width: 100%;
+      max-width: 500px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .preferences-section h2 {
+      color: #343a40;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    
+    /* Form Styles */
+    .preferences-form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .form-group {
+      width: 100%;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    
+    .form-group label {
+      display: block;
+      color: #495057;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .radio-group input[type="radio"] {
+      margin-right: 10px;
+    }
+    
+    .radio-group label {
+      margin: 5px 0;
+      color: #495057;
+    }
+    
+    /* Save Button */
+    .btn {
+      padding: 10px 0;
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .btn:hover {
+      background-color: #218838;
+    }
+    
+    .save-btn {
+      margin-top: 10px;
+    }
+    </style>
+</head>
+<body>
+
+  <!-- Notification Preferences Section -->
+  <section class="preferences-section">
+    <h2>Notification Preferences</h2>
+
+    <form class="preferences-form" action="/save_notification_preferences" method="POST">
+      
+      <!-- Trip Updates -->
+      <div class="form-group">
+        <label>Trip Updates:</label>
+        <div class="radio-group">
+          <input type="radio" id="trip-email" name="trip-updates" value="email">
+          <label for="trip-email">Email</label>
+          <input type="radio" id="trip-sms" name="trip-updates" value="sms">
+          <label for="trip-sms">SMS</label>
+          <input type="radio" id="trip-push" name="trip-updates" value="push">
+          <label for="trip-push">Push Notification</label>
+        </div>
+      </div>
+
+      <!-- Payment Confirmations -->
+      <div class="form-group">
+        <label>Payment Confirmations:</label>
+        <div class="radio-group">
+          <input type="radio" id="payment-email" name="payment-confirmations" value="email">
+          <label for="payment-email">Email</label>
+          <input type="radio" id="payment-sms" name="payment-confirmations" value="sms">
+          <label for="payment-sms">SMS</label>
+          <input type="radio" id="payment-push" name="payment-confirmations" value="push">
+          <label for="payment-push">Push Notification</label>
+        </div>
+      </div>
+
+      <!-- Promotions -->
+      <div class="form-group">
+        <label>Promotions:</label>
+        <div class="radio-group">
+          <input type="radio" id="promo-email" name="promotions" value="email">
+          <label for="promo-email">Email</label>
+          <input type="radio" id="promo-sms" name="promotions" value="sms">
+          <label for="promo-sms">SMS</label>
+          <input type="radio" id="promo-push" name="promotions" value="push">
+          <label for="promo-push">Push Notification</label>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn save-btn">Save Preferences</button>
+    </form>
+  </section>
+
+</body>
+</html>

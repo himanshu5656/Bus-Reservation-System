@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Bus Tracking</title>
+    <link rel="stylesheet" href="style.css">
+    <style>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+        color: #333;
+        line-height: 1.6;
+    }
+    body{
+        width: 100%;
+        height: 100vh;
+        background-color: #e8d4d4;
+    }
+    
+    header {
+        background-color: #004d99;
+        color: white;
+        padding: 1em 0;
+        text-align: center;
+    }
+    
+    header h1 {
+        margin-bottom: 0.5em;
+    }
+    
+    nav a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    nav a:hover,
+    nav a.active {
+        color: #ffcc00;
+    }
+    
+    .tracking-container {
+        max-width: 900px;
+        margin: 2em auto;
+        padding: 1em;
+    }
+    
+    .bus-info, .bus-status, .map-section {
+        margin-bottom: 2em;
+        border-bottom: 1px solid #282828;
+        padding-bottom: 1em;
+    }
+    
+    .bus-info h2, .bus-status h3, .map-section h3 {
+        color: #077bf0;
+        margin-bottom: 0.5em;
+    }
+    
+    .bus-selection {
+        display: flex;
+        align-items: center;
+        margin-top: 1em;
+    }
+    
+    .bus-selection label {
+        margin-right: 10px;
+    }
+    
+    .bus-selection select, .bus-selection button {
+        padding: 0.5em;
+        margin-right: 10px;
+        background-color: #b8c0e5;
+        border: 1px solid #ed0707;
+        border-radius: 4px;
+    }
+    
+    .status-info {
+        background-color: #ed9090;
+        padding: 1em;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .status-info p {
+        margin: 0.5em 0;
+    }
+    
+    .map-section {
+        text-align: center;
+    }
+    
+    .map-placeholder {
+        height: 300px;
+        background-color: #edacac;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+        color: #d2bebe;
+        border-radius: 8px;
+        border: 2px dashed #bbb;
+    }
+    
+    footer {
+        background-color: #090909;
+        color: #ede7e7;
+        text-align: center;
+        padding: 1em 0;
+        font-size: 0.9em;
+    }
+    
+    footer p {
+        margin: 0;
+    }
+    </style>
+</head>
+<body>
+   
+
+    <main class="tracking-container">
+        <section class="bus-info">
+            <h2>Track Your Bus</h2>
+            <p>Select a bus to view its real-time location, estimated arrival time, and route.</p>
+            <div class="bus-selection">
+                <label for="busNumber">Bus Number:</label>
+                <select id="busNumber">
+                    <option value="101">101 - new delhi-varanasi</option>
+                    <option value="202">202 - Airport</option>
+                    <option value="303">303 - Central Station</option>
+                </select>
+                <button id="trackButton">Track Bus</button>
+            </div>
+        </section>
+
+        <section class="bus-status">
+            <h3>Bus Status</h3>
+            <div class="status-info">
+                <p><strong>Current Location:</strong> <span id="location">-</span></p>
+                <p><strong>Estimated Arrival Time:</strong> <span id="arrivalTime">-</span></p>
+                <p><strong>Status:</strong> <span id="status">-</span></p>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <h3>Live Map</h3>
+            <div class="map Placeholder">
+                <p>Map loading...</p>
+                <div class="link" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="4000"><a href="https://www.google.com/maps">view</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bus Tracking System. All rights reserved.</p>
+    </footer>
+</body>
+</html>

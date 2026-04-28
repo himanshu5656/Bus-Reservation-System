@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - Bus Reservation System</title>
+  <link rel="stylesheet" href="style.css">
+  <style>/* General Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    
+    body {
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    /* Payment Section */
+    .payment-section {
+      width: 100%;
+      max-width: 500px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .payment-section h2 {
+      color: #343a40;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    
+    /* Payment Options */
+    .payment-options {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    
+    .payment-btn {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      flex: 1;
+      margin: 0 5px;
+      transition: background-color 0.2s;
+    }
+    
+    .payment-btn:hover {
+      background-color: #0056b3;
+    }
+    
+    /* Payment Forms */
+    .payment-form {
+      display: none;
+      margin-top: 20px;
+    }
+    
+    .payment-form h3 {
+      color: #495057;
+      margin-bottom: 15px;
+    }
+    
+    .payment-form input[type="text"],
+    .payment-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border-color 0.2s;
+    }
+    
+    .payment-form input[type="text"]:focus,
+    .payment-form select:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+    
+    /* Submit Button */
+    .btn {
+      padding: 10px 0;
+      background-color: #28a745;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .btn:hover {
+      background-color: #218838;
+    }
+    </style>
+</head>
+<body>
+
+  <!-- Payment Section -->
+  <section class="payment-section">
+    <h2>Select Payment Method</h2>
+    
+    <!-- Payment Options Buttons -->
+    <div class="payment-options">
+      <button class="payment-btn" onclick="showPaymentForm('credit-card')">Credit Card </button>
+      <button class="payment-btn" onclick="showPaymentForm('debit-card')">Debit Card</button>
+      <button class="payment-btn" onclick="showPaymentForm('net-banking')">Net Banking</button>
+      <button class="payment-btn" onclick="showPaymentForm('upi')">UPI</button>
+    </div>
+
+    <!-- Payment Forms -->
+    <div class="payment-forms">
+
+      <!-- Credit Card Form -->
+      <form id="credit-card" class="payment-form" style="display: none;">
+        <h3>Credit Card Payment</h3>
+        <input type="text" placeholder="Card Number" required>
+        <input type="text" placeholder="Cardholder Name" required>
+        <input type="text" placeholder="Expiry Date (MM/YY)" required>
+        <input type="text" placeholder="CVV" required>
+        <button type="submit" class="btn submit-btn">Pay Now</button>
+      </form>
+
+      <!-- Debit Card Form -->
+      <form id="debit-card" class="payment-form" style="display: none;">
+        <h3>Debit Card Payment</h3>
+        <input type="text" placeholder="Card Number" required>
+        <input type="text" placeholder="Cardholder Name" required>
+        <input type="text" placeholder="Expiry Date (MM/YY)" required>
+        <input type="text" placeholder="CVV" required>
+        <button type="submit" class="btn submit-btn">Pay Now</button>
+      </form>
+
+      <!-- Net Banking Form -->
+      <form id="net-banking" class="payment-form" style="display: none;">
+        <h3>Net Banking</h3>
+        <select required>
+          <option value="">Select Bank</option>
+          <option value="hdfc">HDFC Bank</option>
+          <option value="sbi">State Bank of India</option>
+          <option value="icici">ICICI Bank</option>
+          <option value="axis">Axis Bank</option>
+        </select>
+        <button type="submit" class="btn submit-btn">Pay Now</button>
+      </form>
+
+      <!-- UPI Form -->
+      <form id="upi" class="payment-form" style="display: none;">
+        <h3>UPI Payment</h3>
+        <input type="text" placeholder="Enter UPI ID (e.g., user@bank)" required>
+        <button type="submit" class="btn submit-btn">Pay Now</button>
+      </form>
+
+    </div>
+  </section>
+
+  <script>
+    function showPaymentForm(method) {
+      const forms = document.querySelectorAll('.payment-form');
+      forms.forEach(form => form.style.display = 'none');
+      
+      document.getElementById(method).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
