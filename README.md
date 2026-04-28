@@ -14,7 +14,7 @@ A responsive frontend bus reservation system built using HTML, CSS and JavaScrip
 - JavaScript
 
 ## 📸 Project Preview
-![Project Screenshot](User Interface.png)
+![Project Screenshot](UserInterface.png)
 
 ## 👨‍💻 Author
 Himanshu Singh
